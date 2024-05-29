@@ -13,7 +13,7 @@ You can install SQL to Supabase via npm: `npm install sql-to-supabase`
 
 ```
 import { SupabaseService } from '../sql-to-supabase/index';
-import { createClient, SupabaseClient  } from '@supabase/supabase-js';
+import { createClient  } from '@supabase/supabase-js';
 
 (async () => {
   // Initialize Supabase service
