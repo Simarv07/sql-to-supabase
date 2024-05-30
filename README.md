@@ -4,7 +4,17 @@ SQL to Supabase Converter is an npm package designed to simplify the process of 
 
 ## Progress
 
-Currently support SELECT statements only. Will be adding more functionality in future updates.
+Currently support:
+- [x] SELECT
+- [x] INSERT
+- [ ] UPDATE
+- [ ] DELETE
+- [] Subqueries
+- [] JOIN Queries
+- [] UNION Queries
+- [ ] DDL Queries
+
+
 
 ## Installation
 You can install SQL to Supabase via npm: `npm install sql-to-supabase`
