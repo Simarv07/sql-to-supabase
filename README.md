@@ -5,22 +5,22 @@ SQL to Supabase Converter is an npm package designed to simplify the process of 
 ## Progress
 
 Currently support:
-- [] SELECT
+- [ ] SELECT
   - [x] Basic SELECT
-  - [] SELECT with WHERE Clause
-  - [] SELECT with ORDER BY
-  - [] SELECT with LIMIT and OFFSET
-  - [] SELECT with GROUP BY
-  - [] SELECT with HAVING Clause
-  - [] SELECT DISTINCT
-  - [] SELECT with Aliases
-  - [] SELECT with Aggregation
-  - [] SELECT with JOIN (Inner, Left, Right, Full)
-  - [] SELECT with Subqueries
-  - [] SELECT with UNION
-- [] INSERT
+  - [ ] SELECT with WHERE Clause
+  - [ ] SELECT with ORDER BY
+  - [ ] SELECT with LIMIT and OFFSET
+  - [ ] SELECT with GROUP BY
+  - [ ] SELECT with HAVING Clause
+  - [ ] SELECT DISTINCT
+  - [ ] SELECT with Aliases
+  - [ ] SELECT with Aggregation
+  - [ ] SELECT with JOIN (Inner, Left, Right, Full)
+  - [ ] SELECT with Subqueries
+  - [ ] SELECT with UNION
+- [ ] INSERT
   - [x] Basic INSERT
-  - [] Multiple INSERT
+  - [ ] Multiple INSERT
 - [ ] UPDATE
 - [ ] DELETE
 - [ ] DDL Queries
