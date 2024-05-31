@@ -1,6 +1,6 @@
 # SQL to Supabase Converter
 
-SQL to Supabase Converter is an npm package designed to simplify the process of converting SQL queries into Supabase JavaScript queries.
+SQL to Supabase Converter is an npm package designed to automatically convert SQL queries into Supabase JavaScript queries.
 
 ## Progress
 
