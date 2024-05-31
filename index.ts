@@ -19,7 +19,13 @@ export class SupabaseService {
    * @returns {Function} - The Supabase JavaScript function.
    */
   sqlToSupabase(sql: string) {
-    const ast = this.parser.astify(sql);
+    let ast: any;
+    try {
+      ast = this.parser.astify(sql);
+    } catch {
+      throw new Error('Invalid SQL query. Please check your syntax.');
+    }
+
     const type = ast.type.toUpperCase();
 
     console.log('SQL:', sql)
@@ -92,6 +98,8 @@ export class SupabaseService {
       if (error) {
         throw error;
       }
+
+      console.log(`Data inserted into ${tableName}:`, result);
 
       return data;
     };

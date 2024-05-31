@@ -18,7 +18,7 @@ Currently support:
   - [ ] SELECT with JOIN (Inner, Left, Right, Full)
   - [ ] SELECT with Subqueries
   - [ ] SELECT with UNION
-- [ ] INSERT
+- [x] INSERT
   - [x] Basic INSERT
   - [x] Multiple INSERT
 - [ ] UPDATE
