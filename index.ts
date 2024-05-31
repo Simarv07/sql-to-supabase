@@ -62,18 +62,26 @@ export class SupabaseService {
     const { table, values } = ast;
     const tableName = table[0].table.toString();
 
-    const rowData = values[0].value.map((value: any) => value.value);
+    const rowData = values.map(
+      (row: any) => row.value.map(
+        (value: any) => value.value
+      )
+    )
 
     const columns = ast.columns
 
-    const result: { [key: string]: any } = {};
+    const result: [{ [key: string]: any }] = [{}];
 
     if (columns === null){
       throw new Error('Must specify columns in insert statement. Library does not support insert without column names.');
     }
 
-    for (let i = 0; i < columns.length; i++) {
-      result[columns[i].column] = rowData[i];
+    for (let k = 0; k < rowData.length; k++) {
+      const row = rowData[k];
+      result[k] = {};
+      for (let i = 0; i < columns.length; i++) {
+        result[k][columns[i]] = row[i];
+      }
     }
    
     return async () => {

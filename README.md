@@ -20,7 +20,7 @@ Currently support:
   - [ ] SELECT with UNION
 - [ ] INSERT
   - [x] Basic INSERT
-  - [ ] Multiple INSERT
+  - [x] Multiple INSERT
 - [ ] UPDATE
 - [ ] DELETE
 - [ ] DDL Queries
@@ -32,7 +32,6 @@ Currently support:
 You can install SQL to Supabase via npm: `npm install sql-to-supabase`
 
 ## Example Usage
-
 ```
 import { SupabaseService } from '../sql-to-supabase/index';
 import { createClient  } from '@supabase/supabase-js';
