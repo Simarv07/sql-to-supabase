@@ -7,7 +7,14 @@ SQL to Supabase Converter is an npm package designed to simplify the process of 
 Currently support:
 - [ ] SELECT
   - [x] Basic SELECT
-  - [ ] SELECT with WHERE Clause
+  - [x] SELECT with WHERE Clause
+    - [x] Equal to value
+    - [x] Not equal to value
+    - [x] Greater than or equal to a value
+    - [x] Less than or equal to a value
+  - [ ] SELECT with LIKE Clause
+    - [ ] Matches a pattern
+    - [ ] Case insensitive
   - [ ] SELECT with ORDER BY
   - [ ] SELECT with LIMIT and OFFSET
   - [ ] SELECT with GROUP BY
