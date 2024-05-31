@@ -5,16 +5,28 @@ SQL to Supabase Converter is an npm package designed to simplify the process of 
 ## Progress
 
 Currently support:
-- [x] SELECT
-- [x] INSERT
+- [] SELECT
+  - [x] Basic SELECT
+  - [] SELECT with WHERE Clause
+  - [] SELECT with ORDER BY
+  - [] SELECT with LIMIT and OFFSET
+  - [] SELECT with GROUP BY
+  - [] SELECT with HAVING Clause
+  - [] SELECT DISTINCT
+  - [] SELECT with Aliases
+  - [] SELECT with Aggregation
+  - [] SELECT with JOIN (Inner, Left, Right, Full)
+  - [] SELECT with Subqueries
+  - [] SELECT with UNION
+- [] INSERT
+  - [x] Basic INSERT
+  - [] Multiple INSERT
 - [ ] UPDATE
 - [ ] DELETE
-- [] Subqueries
-- [] JOIN Queries
-- [] UNION Queries
 - [ ] DDL Queries
 
-
+## Limitations
+1. In INSERT statements, user must specify columns as library currently has no way of knowing schema beforehand. May add an option to allow library fetch schema from database or user input schema beforehand in the future.
 
 ## Installation
 You can install SQL to Supabase via npm: `npm install sql-to-supabase`
