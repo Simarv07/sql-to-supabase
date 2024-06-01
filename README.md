@@ -2,6 +2,39 @@
 
 SQL to Supabase Converter is an npm package designed to automatically convert SQL queries into Supabase JavaScript queries.
 
+## Installation
+You can install SQL to Supabase via npm: `npm install sql-to-supabase`
+
+## Example Usage
+
+### Code
+```
+import { SupabaseService } from '../sql-to-supabase/index';
+import { createClient  } from '@supabase/supabase-js';
+
+(async () => {
+  // Initialize Supabase service
+  const supabaseService = new SupabaseService('url', 'key');
+  
+  // Convert SQL to Supabase function
+  const query = supabaseService.sqlToSupabase('SELECT name, email FROM users WHERE name LIKE "S%" AND email != ""');
+
+  try {
+    // Fetch users
+    const data = await query();
+    console.log("Data:", data);
+
+  } catch (error) {
+    console.error('Error fetching users:', error);
+  }
+})();
+```
+
+### Output
+```
+Data: [ { name: 'Simar', email: 'simartest@gmail.com' } ]
+```
+
 ## Progress
 
 Currently support:
@@ -19,7 +52,6 @@ Currently support:
   - [ ] SELECT with HAVING Clause
   - [ ] SELECT DISTINCT
   - [ ] SELECT with Aliases
-  - [ ] SELECT with Aggregation
   - [ ] SELECT with JOIN (Inner, Left, Right, Full)
   - [ ] SELECT with Subqueries
   - [ ] SELECT with UNION
@@ -38,6 +70,12 @@ Currently support:
   - [ ] RPAD()
   - [ ] REVERSE()
   - [ ] CHARINDEX()
+- [ ] Aggregate functions
+  - [ ] MIN()
+  - [ ] MAX()
+  - [ ] COUNT()
+  - [ ] SUM()
+  - [ ] AVG()
 - [x] INSERT
   - [x] Basic INSERT
   - [x] Multiple INSERT
@@ -48,34 +86,3 @@ Currently support:
 ## Limitations
 1. In INSERT statements, user must specify columns as library currently has no way of knowing schema beforehand. May add an option to allow library fetch schema from database or user input schema beforehand in the future.
 
-## Installation
-You can install SQL to Supabase via npm: `npm install sql-to-supabase`
-
-## Example Usage
-### Code
-```
-import { SupabaseService } from '../sql-to-supabase/index';
-import { createClient  } from '@supabase/supabase-js';
-
-(async () => {
-  // Initialize Supabase service
-  const supabaseService = new SupabaseService('url', 'key');
-  
-  // Convert SQL to Supabase function
-  const query = supabaseService.sqlToSupabase('SELECT name, email FROM users WHERE name LIKE "S%" AND email != ""');
-
-  try {
-    // Fetch users
-    const data = await query();
-    console.log("Data:", data);
-    
-  } catch (error) {
-    console.error('Error fetching users:', error);
-  }
-})();
-```
-
-### Output
-```
-Data: [ { name: 'Simar', email: 'simartest@gmail.com' } ]
-```

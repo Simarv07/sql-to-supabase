@@ -46,6 +46,14 @@ export class SupabaseService {
   }
 
   /**
+   * This function handles SELECT functions like LOWER, UPPER, etc.
+   * @param ast The abstract syntax tree of the SQL query.
+   */
+  private handleSelectFunctions(ast: any) {
+
+  }
+
+  /**
    * Handles SELECT queries.
    * @param ast - The abstract syntax tree of the SQL query.
    * @returns - The Supabase JavaScript function.
@@ -54,7 +62,17 @@ export class SupabaseService {
     const { columns } = ast;
     const tableName = ast.from[0].table.toString();
 
-    const columnList = columns.map((col: any) => col.expr.column).join(', ');
+    const columnList = columns.map((col: any) => {
+      if (typeof(col.expr.column) === 'string') {
+        return col.expr.column
+      } else {
+        const columnName = col.expr.args.value.column
+        const functionType = col.expr.name.name.value
+        
+        return col.expr.name.name
+      }
+    }).join(', ');
+
 
     const whereClause = this.buildWhereClause(ast.where);
 
