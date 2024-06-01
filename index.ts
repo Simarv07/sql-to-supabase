@@ -20,11 +20,11 @@ export class SupabaseService {
    */
   sqlToSupabase(sql: string) {
     let ast: any;
-    try {
+    // try {
       ast = this.parser.astify(sql);
-    } catch {
-      throw new Error('Invalid SQL query. Please check your syntax.');
-    }
+    // } catch() {
+    //   throw new Error('Invalid SQL query. Please check your syntax.');
+    // }
 
     const type = ast.type.toUpperCase();
 
@@ -54,7 +54,11 @@ export class SupabaseService {
     const { columns } = ast;
     const tableName = ast.from[0].table.toString();
 
-    const columnList = columns.map((col: any) => col.column).join(', ');
+    console.log('Columns:', columns.map((col: any) => col.expr.column))
+
+    
+
+    const columnList = columns.map((col: any) => col.expr.column).join(', ');
 
     const whereClause = this.buildWhereClause(ast.where);
 
@@ -177,6 +181,8 @@ export class SupabaseService {
           return `${column}.lt.${value}`;
         case '<=':
           return `${column}.lte.${value}`;
+        case 'LIKE':
+          return `${column}.like.${value}`;
         default:
           throw new Error(`Unsupported operator: ${operator}`);
       }

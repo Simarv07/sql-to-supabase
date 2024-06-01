@@ -8,13 +8,11 @@ Currently support:
 - [ ] SELECT
   - [x] Basic SELECT
   - [x] SELECT with WHERE Clause
-    - [x] Equal to value
-    - [x] Not equal to value
-    - [x] Greater than or equal to a value
-    - [x] Less than or equal to a value
-  - [ ] SELECT with LIKE Clause
-    - [ ] Matches a pattern
-    - [ ] Case insensitive
+    - [x] Equal to value (=)
+    - [x] Not equal to value (!=)
+    - [x] Greater than or equal to a value (>=)
+    - [x] Less than or equal to a value (<=)
+    - [x] Match pattern (LIKE)
   - [ ] SELECT with ORDER BY
   - [ ] SELECT with LIMIT and OFFSET
   - [ ] SELECT with GROUP BY
@@ -25,6 +23,21 @@ Currently support:
   - [ ] SELECT with JOIN (Inner, Left, Right, Full)
   - [ ] SELECT with Subqueries
   - [ ] SELECT with UNION
+- [ ] SELECT functions
+  - [ ] UPPER()
+  - [ ] LOWER()
+  - [ ] TRIM()
+  - [ ] LTRIM()
+  - [ ] RTRIM()
+  - [ ] CONCAT()
+  - [ ] SUBSTRING() or SUBSTR()
+  - [ ] LENGTH()
+  - [ ] REPLACE()
+  - [ ] INSTR()
+  - [ ] LPAD()
+  - [ ] RPAD()
+  - [ ] REVERSE()
+  - [ ] CHARINDEX()
 - [x] INSERT
   - [x] Basic INSERT
   - [x] Multiple INSERT
