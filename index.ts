@@ -54,10 +54,6 @@ export class SupabaseService {
     const { columns } = ast;
     const tableName = ast.from[0].table.toString();
 
-    console.log('Columns:', columns.map((col: any) => col.expr.column))
-
-    
-
     const columnList = columns.map((col: any) => col.expr.column).join(', ');
 
     const whereClause = this.buildWhereClause(ast.where);
