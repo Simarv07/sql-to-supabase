@@ -52,6 +52,7 @@ Currently support:
 You can install SQL to Supabase via npm: `npm install sql-to-supabase`
 
 ## Example Usage
+### Code
 ```
 import { SupabaseService } from '../sql-to-supabase/index';
 import { createClient  } from '@supabase/supabase-js';
@@ -61,14 +62,20 @@ import { createClient  } from '@supabase/supabase-js';
   const supabaseService = new SupabaseService('url', 'key');
   
   // Convert SQL to Supabase function
-  const query = supabaseService.sqlToSupabase('SELECT *, name FROM users');
+  const query = supabaseService.sqlToSupabase('SELECT name, email FROM users WHERE name LIKE "S%" AND email != ""');
 
   try {
     // Fetch users
     const data = await query();
-
+    console.log("Data:", data);
+    
   } catch (error) {
     console.error('Error fetching users:', error);
   }
 })();
+```
+
+### Output
+```
+Data: [ { name: 'Simar', email: 'simartest@gmail.com' } ]
 ```
